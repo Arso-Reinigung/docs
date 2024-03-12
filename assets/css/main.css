@@ -1857,40 +1857,49 @@ input, select, textarea {
 
 
 @keyframes spinAndShadow {
-    from { transform: rotateY(0deg); }
+  from { transform: rotateY(0deg); }
     to { transform: rotateY(360deg); }
 }
 
+
 .logo.spinAndShadow {
     animation: spinAndShadow 3s linear 1; 
+		
 }
 
 
 
 
 @keyframes shadowSpin {
-  0%, 50%, 100% {
-    transform: scale(1); 
+  0%, 100% {
+    transform: scale(1) rotateY(0deg); /* Keine Drehung, normale Skalierung */
   }
-  25%, 75% {
-    transform: scale(0.5);
+  25% {
+    transform: scale(0.2) rotateY(90deg); /* Verkleinerung und Teilrotation */
+  }
+  50% {
+    transform: scale(1) rotateY(180deg); /* Zurück zur normalen Größe, halbe Drehung */
+  }
+  75% {
+    transform: scale(0.2) rotateY(90deg); /* Wieder verkleinert, fast vollständige Drehung */
   }
 }
 
+
 .logo-shadow {
-  width: 100%; 
+  width: 60%; 
   height: 10px; 
   background: rgba(0, 0, 0, 0.5); 
   border-radius: 50%;
   position: absolute;
   bottom: -10px; 
+	left: 6.5em;
+	transform-origin: 0% 50%;
+	transform: rotate 360deg;
   z-index: -1;
- animation: shadowSpin 3s linear infinite;
+ animation: shadowSpin 3s linear infinit;
+		
 }
-
-
-
-
 
 .logo {
     width: 100%;
@@ -1904,66 +1913,13 @@ input, select, textarea {
 .logo img {
     width: 100%;
     height: auto;
-    border-radius: 50%;
+   
 }
 
 .logo img:hover {
     filter: brightness(70%);
+	transform: scale(105%);
 }
-
-
-
-
-
-
-
-
-.logo-destroyed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none; /* anfangs versteckt */
-}
-
-
-
-/* Standardgröße des Zerstörungs-GIFs */
-.logo-cracked img {
-    width: 100%;
-    height: auto;
-}
-
-
-.logo-cracked {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none; /* anfangs versteckt */
-}
-
-
-
-/* Standardgröße des Zerstörungs-GIFs */
-.logo-destroyed img {
-    width: 100%;
-    height: auto;
-}
-
-
-
-/* Anpassungen für verschiedene Bildschirmgrößen */
-@media screen and (max-width: 736px) {
-    .logo-destroyed img {
-        width: 4.75rem;
-        height: 4.75rem;
-    }
-}
-
-
 
 
 
@@ -1977,6 +1933,3 @@ input, select, textarea {
         height: 80px;
     }
 }
-
-
-
