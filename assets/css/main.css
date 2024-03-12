@@ -1879,7 +1879,7 @@ input, select, textarea {
     transform: scale(0.2) rotateY(90deg); /* Verkleinerung und Teilrotation */
   }
   50% {
-    transform: scale(1) rotateY(180deg); /* Zurück zur normalen Größe, halbe Drehung */
+    transform: scale(0.75) rotateY(180deg); /* Zurück zur normalen Größe, halbe Drehung */
   }
   75% {
     transform: scale(0.2) rotateY(90deg); /* Wieder verkleinert, fast vollständige Drehung */
@@ -1888,7 +1888,7 @@ input, select, textarea {
 
 
 .logo-shadow {
-  width: 60%; 
+  width: 50%; 
   height: 10px; 
   background: rgba(0, 0, 0, 0.5); 
   border-radius: 50%;
