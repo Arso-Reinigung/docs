@@ -396,136 +396,162 @@
 
 })(jQuery);
 
+
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Auswahl der Elemente
-    var logoContainer = document.querySelector('.logo-container');
-    var logo = document.querySelector('.logo.spinAndShadow');
-    var logoShadow = document.querySelector('.logo-shadow'); // Hinzufügen des Schattenelements
-    var isSpinning = false;
-    var confirmBoxShown = false;
-    var logoClickListenerAdded = false;
-    var animationInProgress = true;
-    var clickCount = 0;
-    var hintStar = document.querySelector('.hint-star');
+// Auswahl der Elemente
+	var logoContainer = document.querySelector('.logo-container');
+	var logo = document.querySelector('.logo.spinAndShadow');
+	var logoShadow = document.querySelector('.logo-shadow'); // Hinzufügen des Schattenelements
+	var isSpinning = false;
+	var confirmBoxShown = false;
+	var logoClickListenerAdded = false;
+	var animationInProgress = true;
+	var clickCount = 0;
+	var hintStar = document.querySelector('.hint-star');
+	var newLogo = document.querySelector('.new-logo'); // Ziel für finalen Wobble
 
 
 
-    // Bestätigungsdialog-Elemente und -Logik
-    var confirmBox = document.getElementById('customConfirmBox');
-    var confirmYes = document.getElementById('confirmYes');
-    var confirmNo = document.getElementById('confirmNo');
-
-   window.addEventListener('load', function() {
-	//starten der schattenanimation beim laden der seite
-	logo.classList.add('spinAndShadow');
-	logoShadow.style.animation = 'shadowSpin 3s linear 1';
-        // Warte eine bestimmte Zeit nach dem Laden der Seite
-        setTimeout(function() {
-            // Setze animationInProgress auf false, um Interaktionen zu ermöglichen
-            animationInProgress = false;
-        }, 3000); // Hier können Sie die Verzögerung anpassen
-    });
+		// Bestätigungsdialog-Elemente und -Logik
+		var confirmBox = document.getElementById('customConfirmBox');
+		var confirmYes = document.getElementById('confirmYes');
+		var confirmNo = document.getElementById('confirmNo');
 
 
 
-
-	
-    // Event Listener für den Bestätigungsdialog
-    confirmYes.addEventListener('click', function() {
-        window.location.href = '#anmelden';
-        confirmBox.style.display = 'none';
-    });
-
-    confirmNo.addEventListener('click', function() {
-        confirmBox.style.display = 'none';
-    });
-
-    // Funktion zum Anzeigen des Bestätigungsdialogs
-    function showConfirmBox() {
-        if (!confirmBoxShown) {
-            setTimeout(function() {
-                confirmBox.style.display = 'block';
-                confirmBoxShown = true;
-            }, 3500);
-        }
-    }
-
-    // Funktion zum Beenden der Logo-Drehanimation
-    function handleAnimationEnd() {
-        logoContainer.style.transition = 'transform 1s ease';
-        logoContainer.style.transform = 'scale(1)';
-        logo.classList.remove('spinAndShadow');
-        isSpinning = false;
-        logo.removeEventListener('animationend', handleAnimationEnd);
-        animationInProgress = false;
-        logoShadow.style.animation = 'none'; // Stoppt Schatten-Animation
-    }
-
-// Funktion zum Starten der Logo-Drehanimation
-function toggleSpin() {
-    console.log("Toggle Spin aufgerufen");
-
-    if (!isSpinning) {
-        // Animation starten
-        animationInProgress = true;
-        logo.classList.remove('spinAndShadow');
-        void logo.offsetWidth; // Trigger reflow für Neustart der Animation
-        logo.classList.add('spinAndShadow');
-        logoShadow.style.animation = 'shadowSpin 3s linear 1'; // Schatten-Animation starten
-        isSpinning = true;
-    }
-}
-
-// Event Listener für das Ende der Logo-Animation
-logo.addEventListener('animationend', function() {
-    // Beendet die Schatten-Animation, wenn die Logo-Animation endet
-    logoShadow.style.animation = 'none';
-    isSpinning = false;
-    animationInProgress = false;
-    logo.classList.remove('spinAndShadow');
-});
+		window.addEventListener('load', function() {
+		//starten der schattenanimation beim laden der seite
+		logo.classList.add('spinAndShadow');
+		logoShadow.style.animation = 'shadowSpin 3s linear 1';
+		// Warte eine bestimmte Zeit nach dem Laden der Seite
+		setTimeout(function() {
+		// Setze animationInProgress auf false, um Interaktionen zu ermöglichen
+		animationInProgress = false;
+		}, 3000); // Hier können Sie die Verzögerung anpassen
+		});
 
 
 
-	
-if (!logoClickListenerAdded) {
-    logo.addEventListener('click', function() {
-    // Überprüfung, ob keine andere Animation im Gange ist
-    if (!animationInProgress) {
-		toggleSpin();
-        // Zählt nur, wenn keine andere Animation läuft
-        clickCount++;
-    }
+
+				
+						// Event Listener für den Bestätigungsdialog
+						confirmYes.addEventListener('click', function() {
+						window.location.href = '#anmelden';
+						confirmBox.style.display = 'none';
+						});
+
+						confirmNo.addEventListener('click', function() {
+						confirmBox.style.display = 'none';
+						});
+
+						// Funktion zum Anzeigen des Bestätigungsdialogs
+						function showConfirmBox() {
+						if (!confirmBoxShown) {
+							setTimeout(function() {
+								confirmBox.style.display = 'block';
+								confirmBoxShown = true;
+							}, 3500);
+							}
+							}	
 
 
-	
 
-    // Logik für die Bestätigungsbox nach dem zweiten Klick
-    if (clickCount === 1 && !confirmBoxShown) {
-        showConfirmBox();
-    }
-});
+						// Funktion zum Beenden der Logo-Drehanimation
+						function handleAnimationEnd() {
+						logoContainer.style.transition = 'transform 1s ease';
+						logoContainer.style.transform = 'scale(1)';
+						logo.classList.remove('spinAndShadow');
+						isSpinning = false;
+						logo.removeEventListener('animationend', handleAnimationEnd);
+						animationInProgress = false;
+						logoShadow.style.animation = 'none'; // Stoppt Schatten-Animation
+						}
 
 
-	 logoClickListenerAdded = true; // Listener als hinzugefügt markieren
-}
+
+						// Funktion zum Starten der Logo-Drehanimation
+						function toggleSpin() {
+						console.log("Toggle Spin aufgerufen");
 
 
-	
 
-	
-    // Funktionen für das Sternchen-Element
-    function showHintStar() {
-        hintStar.style.display = 'block';
-    }
+						if (!isSpinning) {
+						// Animation starten
+						animationInProgress = true;
+						logo.classList.remove('spinAndShadow');
+						void logo.offsetWidth; // Trigger reflow für Neustart der Animation
+						logo.classList.add('spinAndShadow');
+						logoShadow.style.animation = 'shadowSpin 3s linear 1'; // Schatten-Animation starten
+						isSpinning = true;
+						}
+						}
+					
+				
+				
+						function startFinalWobble() {
+							newLogo.style.animation = 'none'; // Reset der Animation
+							void newLogo.offsetWidth; // Trigger reflow für Neustart der Animation
+							newLogo.style.transformOrigin = '50% 50%'; // Setzt den Drehpunkt auf die Mitte des Logos
+							newLogo.style.animation = 'finalWobble 0.5s forwards';
+						}
 
-    function hideHintStar() {
-        hintStar.style.display = 'none';
-    }
 
-    // Aufruf der initialen Funktionen oder Einstellungen
-    // ...
+						// Warte auf das Ende der fall und wobble Animationen, bevor der finale Wobble gestartet wird
+						setTimeout(startFinalWobble, 6100); // 6 Sekunden entspricht der Gesamtdauer von fall und wobble
 
-    
+
+
+				// Event Listener für das Ende der Logo-Animation
+				logo.addEventListener('animationend', function() {
+					// Beendet die Schatten-Animation, wenn die Logo-Animation endet
+					logoShadow.style.animation = 'none';
+					isSpinning = false;
+					animationInProgress = false;
+					logo.classList.remove('spinAndShadow');
+				});
+
+
+
+			
+				if (!logoClickListenerAdded) {
+					logo.addEventListener('click', function() {
+					// Überprüfung, ob keine andere Animation im Gange ist
+					if (!animationInProgress) {
+						toggleSpin();
+						// Zählt nur, wenn keine andere Animation läuft
+						clickCount++;
+					}
+
+
+			
+
+					// Logik für die Bestätigungsbox nach dem zweiten Klick
+					if (clickCount === 1 && !confirmBoxShown) {
+						showConfirmBox();
+					}
+				});
+
+
+				logoClickListenerAdded = true; // Listener als hinzugefügt markieren
+				}
+
+
+			
+
+			
+				// Funktionen für das Sternchen-Element
+				function showHintStar() {
+					hintStar.style.display = 'block';
+				}
+
+				function hideHintStar() {
+					hintStar.style.display = 'none';
+				}
+
+				// Aufruf der initialen Funktionen oder Einstellungen
+				// ...
+
+				
 });
 

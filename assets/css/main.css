@@ -1221,6 +1221,8 @@ input, select, textarea {
 			background-size: cover;
 			background-repeat: no-repeat;
 			z-index: 1;
+			
+			
 		}
 
 		body.is-article-visible #bg:after {
@@ -1322,6 +1324,9 @@ input, select, textarea {
 		background-image: radial-gradient(rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0) 55%);
 		max-width: 100%;
 		text-align: center;
+		margin-top: -15%;
+		
+		
 	}
 
 		#header > * {
@@ -1849,9 +1854,10 @@ input, select, textarea {
 
 .logo-container {
     position: absolute;
-    width: 250px;
-    height: 250px;
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
+	top: 14em;
 }
 
 
@@ -1893,12 +1899,12 @@ input, select, textarea {
 
 .logo-shadow {
   width: 50%; 
-  height: 10px; 
+  height: 8%; 
   background: rgba(0, 0, 0, 0.5); 
   border-radius: 50%;
   position: absolute;
-  bottom: -10px; 
-	left: 6.5em;
+  bottom: -4%; 
+	left: 48%;
 	transform-origin: 0% 50%;
 	transform: rotate 360deg;
   z-index: -1;
@@ -1922,8 +1928,8 @@ input, select, textarea {
 }
 
 .logo img:hover {
-    filter: brightness(70%);
-	transform: scale(105%);
+    filter: brightness(95%);
+	transform: scale(101%);
 }
 
 
@@ -1944,17 +1950,94 @@ input, select, textarea {
 
 
 .new-logo {
-    position: absolute;
+    position: relative;
+	animation: fall 2.5s cubic-bezier(0.3, 0, 0.8, 0) forwards, 
+	wobble 3s 3s cubic-bezier(0.001, 0, 1, 0) forwards; /* Angabe der Timing-Funktion für jede Animation */
+	transform-origin: 0% 100%; /* Setzt den Drehpunkt unten links */
+	opacity: 0;
+}
+
+.finalWobbleEffect {
+    animation: finalWobble 0.5s 4s forwards; /* Finaler Wobble startet nach 4 Sekunden */
+    transform-origin: 50% 50%; /* Zentraler Drehpunkt für den finalen Wobble */
 }
 
 #arso-logo {
     /* Positioniert das Logo relativ zum Viewport */
-    bottom: 0vh; /* 5% vom unteren Rand des Viewports */
+    bottom: -35vh; /* 5% vom unteren Rand des Viewports */
     right: 0vw; /* 5% vom rechten Rand des Viewports */
 }
 
+
+
+.new-logo2 {
+    position: relative;
+
+}
 #garantie-logo {
     /* Positioniert das Logo oben rechts, mit einem Abstand zum Rand, der relativ zur Schriftgröße des Nutzers ist */
-    bottom: 105vh; /* basierend auf der Schriftgröße des Wurzelelements */
+    bottom: 38vh; /* basierend auf der Schriftgröße des Wurzelelements */
     right: 40vw; /* ebenfalls basierend auf der Schriftgröße des Wurzelelements */
+	
+
+	
+}
+
+
+/* Anpassen der Größe der Bilder direkt */
+#arso-logo img, #garantie-logo img {
+    width: auto; /* passt die Breite automatisch an, behält das Seitenverhältnis bei */
+    height: auto; /* passt die Höhe automatisch an, behält das Seitenverhältnis bei */
+    max-width: 30vw; /* Setzt eine maximale Breite relativ zum Viewport */
+    max-height: 30vh; /* Setzt eine maximale Höhe relativ zum Viewport */
+}
+
+
+
+
+
+@keyframes fall {
+	0% {
+	  transform: translateY(-100vh) rotate(-50deg);
+	  opacity: 0;
+	}
+	100% {
+	  transform: translateY(0) rotate(-70deg);
+	  opacity: 1;
+	}
+  }
+  
+
+
+  @keyframes wobble {
+	0% {
+	  transform: rotate(-75deg);
+	  opacity: 1;
+	}
+	100% {
+	  transform: rotate(0deg);
+	  opacity: 1;
+	}
+  }
+
+
+
+  @keyframes finalWobble {
+    0% {
+        transform: rotate(0deg);
+		opacity: 1;
+    }
+    25% {
+        transform: rotate(3deg);
+    }
+    50% {
+        transform: rotate(-3deg);
+    }
+    75% {
+        transform: rotate(2deg);
+    }
+    100% {
+        transform: rotate(0deg);
+		opacity: 1;
+    }
 }
