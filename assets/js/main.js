@@ -416,6 +416,9 @@ document.addEventListener('DOMContentLoaded', function() {
     var confirmNo = document.getElementById('confirmNo');
 
    window.addEventListener('load', function() {
+	//starten der schattenanimation beim laden der seite
+	logo.classList.add('spinAndShadow');
+	logoShadow.style.animation = 'shadowSpin 3s linear 1';
         // Warte eine bestimmte Zeit nach dem Laden der Seite
         setTimeout(function() {
             // Setze animationInProgress auf false, um Interaktionen zu ermöglichen

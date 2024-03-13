@@ -1857,6 +1857,10 @@ input, select, textarea {
 
 
 
+
+
+
+
 @keyframes spinAndShadow {
   from { transform: rotateY(0deg); }
     to { transform: rotateY(360deg); }
@@ -1908,7 +1912,7 @@ input, select, textarea {
     position: absolute;
     top: 0;
     left: 0;
-    border-radius: 50%;  
+    border-radius: 50%;
 }
 
 .logo img {
@@ -1933,4 +1937,24 @@ input, select, textarea {
         width: 80px;
         height: 80px;
     }
+}
+
+
+
+
+
+.new-logo {
+    position: absolute;
+}
+
+#arso-logo {
+    /* Positioniert das Logo relativ zum Viewport */
+    bottom: 0vh; /* 5% vom unteren Rand des Viewports */
+    right: 0vw; /* 5% vom rechten Rand des Viewports */
+}
+
+#garantie-logo {
+    /* Positioniert das Logo oben rechts, mit einem Abstand zum Rand, der relativ zur Schriftgröße des Nutzers ist */
+    bottom: 105vh; /* basierend auf der Schriftgröße des Wurzelelements */
+    right: 40vw; /* ebenfalls basierend auf der Schriftgröße des Wurzelelements */
 }
