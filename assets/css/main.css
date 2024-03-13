@@ -2054,3 +2054,11 @@ input, select, textarea {
 		opacity: 1;
     }
 }
+
+
+
+
+.highlight {
+    font-size: 1.7rem; /* Größer als die Basisschriftgröße */
+    text-transform: lowercase;
+}
