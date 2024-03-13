@@ -420,6 +420,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+		// Startet die Fall-Animation sofort
+		newLogo.style.animation = 'fall 2.5s cubic-bezier(0.3, 0, 0.8, 0) forwards';
+			
+
+		newLogo.addEventListener('animationend', function(e) {
+			if (e.animationName === 'fall') {
+				// Startet die Tilt-Animation direkt nach dem Ende der Fall-Animation
+				newLogo.style.animation = 'tilt 1s forwards';
+			} else if (e.animationName === 'tilt') {
+				// Startet die Wobble-Animation direkt nach dem Ende der Tilt-Animation
+				newLogo.style.animation = 'wobble 3s cubic-bezier(0.001, 0, 1, 0) forwards';
+			}
+			// finalWobble wird basierend auf einer gesetzten Verzögerung oder im Anschluss an wobble gestartet
+		}, { once: false });
+
+
+
 		window.addEventListener('load', function() {
 		//starten der schattenanimation beim laden der seite
 		logo.classList.add('spinAndShadow');
@@ -498,7 +515,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 						// Warte auf das Ende der fall und wobble Animationen, bevor der finale Wobble gestartet wird
-						setTimeout(startFinalWobble, 6100); // 6 Sekunden entspricht der Gesamtdauer von fall und wobble
+						setTimeout(startFinalWobble, 6640); // 6.1 Sekunden entspricht der Gesamtdauer von fall und wobble und tilt
 
 
 

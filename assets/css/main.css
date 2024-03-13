@@ -1928,8 +1928,8 @@ input, select, textarea {
 }
 
 .logo img:hover {
-    filter: brightness(95%);
-	transform: scale(101%);
+    filter: brightness(90%);
+	transform: scale(100%);
 }
 
 
@@ -2007,6 +2007,19 @@ input, select, textarea {
 	}
   }
   
+
+  @keyframes tilt {
+    0% {
+        transform: rotate(-70deg);
+		opacity: 1;
+    }
+    100% {
+        transform: rotate(-75deg); /* Eine sanfte Neigung nach dem Aufschlag */
+		opacity: 1;
+    }
+}
+
+
 
 
   @keyframes wobble {
