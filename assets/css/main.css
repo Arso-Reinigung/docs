@@ -229,7 +229,7 @@ input, select, textarea {
 	}
 
 	p {
-		margin: 0 0 2rem 0;
+	
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -2059,6 +2059,180 @@ input, select, textarea {
 
 
 .highlight {
-    font-size: 1.7rem; /* Größer als die Basisschriftgröße */
+    font-size: 1.9rem; /* Größer als die Basisschriftgröße */
     text-transform: lowercase;
+}
+
+
+
+.text-center-container {
+    display: flex; /* Aktiviert Flexbox */
+    justify-content: center; /* Zentriert Inhalte horizontal */
+    text-align: center; /* Stellt sicher, dass Text innerhalb des flex-Items zentriert ist */
+    width: 100%; /* Stellt sicher, dass der Container die volle Breite einnimmt */
+	flex-direction: column;
+	align-items: center;
+}
+
+.major {
+    flex: 0 1 auto; /* Erlaubt dem <h2> Element, seine Größe basierend auf seinem Inhalt anzupassen */
+    /* Entfernen von Margin/Padding kann nötig sein, je nachdem wie Ihr CSS aufgebaut ist */
+}
+
+
+
+
+
+
+/* Globale Stile begrenzt auf .meineButtonContainer */
+.meineButtonContainer body {
+    background: #e0e5ec;
+}
+.meineButtonContainer h1 {
+    position: relative;
+    text-align: center;
+    color: #353535;
+    font-size: 50px;
+    font-family: "Cormorant Garamond", serif;
+}
+.meineButtonContainer p {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    font-size: 18px;
+    color: #676767;
+}
+
+/* Frame-Stil innerhalb von .meineButtonContainer */
+.meineButtonContainer .frame {
+    width: 90%;
+    text-align: center;
+}
+
+
+
+/* Spezifische Button-Stile */
+.meineButtonContainer .custom-btn {
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+}
+
+.meineButtonContainer .btn-12 {
+    position: relative;
+    border: none;
+    box-shadow: none;
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    -webkit-perspective: 230px;
+    perspective: 230px;
+}
+
+
+
+
+/* Weitere Button-Stile hier ... */
+ /* 12 */
+
+
+.btn-12{
+	position: relative;
+	border:none;
+	box-shadow: none;
+	width: 130px;
+	height: 40px;
+	line-height: 42px;
+	-webkit-perspective: 230px;
+	perspective: 230px;
+  }
+  .btn-12 span {
+	background: rgb(0,172,238);
+  background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+	display: block;
+	position: absolute;
+	width: 130px;
+	height: 40px;
+	box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+	 7px 7px 20px 0px rgba(0,0,0,.1),
+	 4px 4px 5px 0px rgba(0,0,0,.1);
+	border-radius: 5px;
+	margin:0;
+	text-align: center;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+  }
+  .btn-12 span:nth-child(1) {
+	box-shadow:
+	 -7px -7px 20px 0px #fff9,
+	 -4px -4px 5px 0px #fff9,
+	 7px 7px 20px 0px #0002,
+	 4px 4px 5px 0px #0001;
+	-webkit-transform: rotateX(90deg);
+	-moz-transform: rotateX(90deg);
+	transform: rotateX(90deg);
+	-webkit-transform-origin: 50% 50% -20px;
+	-moz-transform-origin: 50% 50% -20px;
+	transform-origin: 50% 50% -20px;
+  }
+  .btn-12 span:nth-child(2) {
+	-webkit-transform: rotateX(0deg);
+	-moz-transform: rotateX(0deg);
+	transform: rotateX(0deg);
+	-webkit-transform-origin: 50% 50% -20px;
+	-moz-transform-origin: 50% 50% -20px;
+	transform-origin: 50% 50% -20px;
+  }
+  .btn-12:hover span:nth-child(1) {
+	box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+	 7px 7px 20px 0px rgba(0,0,0,.1),
+	 4px 4px 5px 0px rgba(0,0,0,.1);
+	-webkit-transform: rotateX(0deg);
+	-moz-transform: rotateX(0deg);
+	transform: rotateX(0deg);
+  }
+  .btn-12:hover span:nth-child(2) {
+	box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+	 7px 7px 20px 0px rgba(0,0,0,.1),
+	 4px 4px 5px 0px rgba(0,0,0,.1);
+   color: transparent;
+	-webkit-transform: rotateX(-90deg);
+	-moz-transform: rotateX(-90deg);
+	transform: rotateX(-90deg);
+  }
+
+
+
+
+
+
+
+
+
+  
+.meineButtonContainer .btn-12 span {
+    background: rgb(209, 94, 41);
+    background: linear-gradient(0deg, rgb(196, 92, 44) 0%, rgb(134, 20, 5) 100%);
+    display: block;
+    position: absolute;
+    width: 130px;
+    height: 40px;
+    border-radius: 5px;
+    margin: 0;
+    text-align: center;
+    box-sizing: border-box;
+    transition: all .3s;
 }
