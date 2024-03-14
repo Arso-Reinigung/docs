@@ -431,9 +431,22 @@ document.addEventListener('DOMContentLoaded', function() {
 			} else if (e.animationName === 'tilt') {
 				// Startet die Wobble-Animation direkt nach dem Ende der Tilt-Animation
 				newLogo.style.animation = 'wobble 3s cubic-bezier(0.001, 0, 1, 0) forwards';
+			} else if (e.animationName === 'wobble') {startFinalWobble();
 			}
 			// finalWobble wird basierend auf einer gesetzten Verzögerung oder im Anschluss an wobble gestartet
 		}, { once: false });
+
+
+
+		function startFinalWobble() {
+			newLogo.style.animation = 'none'; // Reset der Animation
+			void newLogo.offsetWidth; // Trigger reflow für Neustart der Animation
+			newLogo.style.transformOrigin = '50% 50%'; // Setzt den Drehpunkt auf die Mitte des Logos
+			newLogo.style.animation = 'finalWobble 0.5s forwards';
+		}
+
+
+
 
 
 
@@ -506,16 +519,6 @@ document.addEventListener('DOMContentLoaded', function() {
 					
 				
 				
-						function startFinalWobble() {
-							newLogo.style.animation = 'none'; // Reset der Animation
-							void newLogo.offsetWidth; // Trigger reflow für Neustart der Animation
-							newLogo.style.transformOrigin = '50% 50%'; // Setzt den Drehpunkt auf die Mitte des Logos
-							newLogo.style.animation = 'finalWobble 0.5s forwards';
-						}
-
-
-						// Warte auf das Ende der fall und wobble Animationen, bevor der finale Wobble gestartet wird
-						setTimeout(startFinalWobble, 6640); // 6.1 Sekunden entspricht der Gesamtdauer von fall und wobble und tilt
 
 
 
