@@ -1951,11 +1951,11 @@ input, select, textarea {
 
 .new-logo {
     position: relative;
-	animation: fall 2.5s cubic-bezier(0.3, 0, 0.8, 0) forwards, 
-	wobble 3s 3s cubic-bezier(0.001, 0, 1, 0) forwards; /* Angabe der Timing-Funktion für jede Animation */
+	animation: fall 2.5s cubic-bezier(0.3, 0, 0.8, 0) forwards;
 	transform-origin: 0% 100%; /* Setzt den Drehpunkt unten links */
 	opacity: 0;
 }
+
 
 .finalWobbleEffect {
     animation: finalWobble 0.5s 4s forwards; /* Finaler Wobble startet nach 4 Sekunden */
