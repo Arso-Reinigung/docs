@@ -2236,3 +2236,31 @@ input, select, textarea {
     box-sizing: border-box;
     transition: all .3s;
 }
+
+
+/* Bildergalerie */
+
+
+
+.image-gallery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.image-container img {
+    max-width: 43vw; /* Anpassen für die Bildgröße */
+    max-height: 100vh; /* Maximale Höhe von 50% des Viewport */
+    object-fit: contain; /* Stellt sicher, dass das Bild proportional skaliert */
+}
+
+.btn {
+    cursor: pointer;
+    padding: 2px 12px;
+    background-color: #dd1313a8;
+    border: none;
+    font-size: 24px;
+}
+
+/* Zusätzliches Styling nach Bedarf */

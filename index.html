@@ -240,88 +240,17 @@ if (window.innerWidth <= 768) { // Du kannst die maximale Breite anpassen
 						
 						<!-- About -->
 							<article id="BILDER">
-    <h2 class="major">Preisübersicht</h2>
+    <h2 class="major">Referenzen</h2>
     <span class="image main"><img src="preis.png" alt="" /></span>
     
-  <!-- Original Tabelle für Desktop -->
-<div class="desktop-table">
-    <table>
-        <thead>
-            <tr>
-                <th>Kategorie</th>
-                <th>Online</th>
-                <th>Zu Hause</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Erwachsene</td>
-                <td>
-                    <ul>
-                        <li>Einzelunterricht: CHF 55.- pro 50 Minuten</li>
-                        <li>Gruppenunterricht: CHF 25.- pro 50 Minuten</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Einzelunterricht: CHF 90.- pro Stunde</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td>Kinder/Senioren</td>
-                <td>
-                    <ul>
-                        <li>Einzelunterricht: CHF 45.- pro 50 Minuten</li>
-                        <li>Gruppenunterricht: CHF 20.- pro 50 Minuten</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Einzelunterricht: CHF 70.- pro Stunde</li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-	<p>Hinweis: Für Unterricht außerhalb der Stadt Zürich wird ein zusätzlicher Aufpreis berechnet.</p>
-</div>
-
-<!-- Alternative Struktur für mobile Geräte -->
-<div class="mobile-table">
-    <div class="mobile-table-row">
-        <div class="mobile-table-header">Erwachsene</div>
-        <div class="mobile-table-content">
-            <p>Online</p>
-            <ul>
-                <li>Einzelunterricht: CHF 55.- pro 50 Minuten</li>
-                <li>Gruppenunterricht: CHF 25.- pro 50 Minuten</li>
-            </ul>
-            <p>Zu Hause</p>
-            <ul>
-                <li>Einzelunterricht: CHF 90.- pro Stunde</li>
-            </ul>
-        </div>
-    </div>
-    <div class="mobile-table-row">
-        <div class="mobile-table-header">Kinder/Senioren</div>
-        <div class="mobile-table-content">
-            <p>Online</p>
-            <ul>
-                <li>Einzelunterricht: CHF 45.- pro 50 Minuten</li>
-                <li>Gruppenunterricht: CHF 20.- pro 50 Minuten</li>
-            </ul>
-            <p>Zu Hause</p>
-            <ul>
-                <li>Einzelunterricht: CHF 70.- pro Stunde</li>
-            </ul>
-        </div>
-    </div>
-
-<p>Hinweis: Für Unterricht außerhalb der Stadt Zürich wird ein zusätzlicher Aufpreis berechnet.</p>
+	<div class="image-gallery">
+		<button class="btn prev" onclick="changeImage(-1)">&#10094;</button>
+		<div class="image-container">
+			<img src="bild1.jpg" alt="Bild" id="current-image">
+		</div>
+		<button class="btn next" onclick="changeImage(1)">&#10095;</button>
+	</div>
 	
-</div>
 								
 
 								

@@ -420,6 +420,48 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+		//Bildergallerie
+
+		let currentIndex = 0; // Startindex
+    const images = [
+        "images/nikotin.png",
+		"images/kueche.png",
+        "images/muelleimer.png",
+        "images/heizung.png",
+		"images/ofen.png",
+		"images/ofen_aussen.png",
+		"images/kueche_ofen.png"
+
+
+		  	// Stelle sicher, dass alle Pfade korrekt sind
+    ];
+
+
+
+	function changeImage(direction) {
+        currentIndex += direction;
+        if (currentIndex < 0) {
+            currentIndex = images.length - 1; // Gehe zum letzten Bild, wenn der Index unter 0 fällt
+        } else if (currentIndex >= images.length) {
+            currentIndex = 0; // Gehe zum ersten Bild, wenn der Index über die Anzahl der Bilder hinausgeht
+        }
+        document.getElementById("current-image").src = images[currentIndex];
+    }
+
+	changeImage(currentIndex);
+
+
+    // Verknüpfung der Funktion mit den Buttons
+    document.querySelector('.prev').addEventListener('click', function() { changeImage(-1); });
+    document.querySelector('.next').addEventListener('click', function() { changeImage(1); });
+
+
+		//Bildergallerie ende
+
+
+
+
 		// Startet die Fall-Animation sofort
 		newLogo.style.animation = 'fall 2.5s cubic-bezier(0.3, 0, 0.8, 0) forwards';
 			
@@ -571,6 +613,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 				// Aufruf der initialen Funktionen oder Einstellungen
 				// ...
+
+				
+
+
 
 				
 });
