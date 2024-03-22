@@ -1496,13 +1496,9 @@ input, select, textarea {
 					height: calc(2rem + 1px);
 				}
 
-			#header .logo {
-				width: 4.75rem;
-				height: 4.75rem;
-				line-height: 4.75rem;
-			}
+			
 
-				#header .logo .icon:before {
+				#header .icon:before {
 					font-size: 1.75rem;
 				}
 
@@ -1851,65 +1847,60 @@ input, select, textarea {
 }
 
 
-
-.logo-container {
-    position: absolute;
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
-	top: 14em;
-}
-
-
-
-
-
-
-
-
 @keyframes spinAndShadow {
-  from { transform: rotateY(0deg); }
-    to { transform: rotateY(360deg); }
-}
-
-
-.logo.spinAndShadow {
-    animation: spinAndShadow 3s linear 1; 
-		
-}
-
-
-
-
-@keyframes shadowSpin {
-  0%, 100% {
-    transform: scale(1) rotateY(0deg); /* Keine Drehung, normale Skalierung */
+	from { transform: rotateY(0deg); }
+	  to { transform: rotateY(360deg); }
   }
-  25% {
-    transform: scale(0.2) rotateY(90deg); /* Verkleinerung und Teilrotation */
+  
+  
+  .logo.spinAndShadow {
+	  animation: spinAndShadow 3s linear 1; 
+		  
   }
-  50% {
-    transform: scale(0.75) rotateY(180deg); /* Zurück zur normalen Größe, halbe Drehung */
+  
+  
+  
+  
+  @keyframes shadowSpin {
+	0%, 100% {
+	  transform: scale(1) rotateY(0deg); /* Keine Drehung, normale Skalierung */
+	}
+	25% {
+	  transform: scale(0.2) rotateY(90deg); /* Verkleinerung und Teilrotation */
+	}
+	50% {
+	  transform: scale(0.75) rotateY(180deg); /* Zurück zur normalen Größe, halbe Drehung */
+	}
+	75% {
+	  transform: scale(0.2) rotateY(90deg); /* Wieder verkleinert, fast vollständige Drehung */
+	}
   }
-  75% {
-    transform: scale(0.2) rotateY(90deg); /* Wieder verkleinert, fast vollständige Drehung */
+  
+  
+  .logo-shadow {
+	width: 50%; 
+	height: 8%; 
+	background: rgba(0, 0, 0, 0.5); 
+	border-radius: 50%;
+	position: absolute;
+	bottom: -4%; 
+	  left: 48%;
+	  transform-origin: 0% 50%;
+	  transform: rotate 360deg;
+	z-index: -1;
+   animation: shadowSpin 3s linear infinit;
+		  
   }
-}
 
 
-.logo-shadow {
-  width: 50%; 
-  height: 8%; 
-  background: rgba(0, 0, 0, 0.5); 
-  border-radius: 50%;
-  position: absolute;
-  bottom: -4%; 
-	left: 48%;
-	transform-origin: 0% 50%;
-	transform: rotate 360deg;
-  z-index: -1;
- animation: shadowSpin 3s linear infinit;
-		
+
+
+  .logo-container {
+    position: absolute;
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    top: 30vh;
 }
 
 .logo {
@@ -1924,8 +1915,8 @@ input, select, textarea {
 .logo img {
     width: 100%;
     height: auto;
-   
 }
+
 
 .logo img:hover {
     filter: brightness(90%);
@@ -1934,16 +1925,8 @@ input, select, textarea {
 
 
 
-@media screen and (max-width: 615px) {
-    .logo-container {
-        width: 80px;
-        height: 80px;
-    }
-    .logo {
-        width: 80px;
-        height: 80px;
-    }
-}
+
+
 
 
 
@@ -1964,7 +1947,7 @@ input, select, textarea {
 
 #arso-logo {
     /* Positioniert das Logo relativ zum Viewport */
-    bottom: -35vh; /* 5% vom unteren Rand des Viewports */
+    top: 38vh; /* 5% vom unteren Rand des Viewports */
     right: 0vw; /* 5% vom rechten Rand des Viewports */
 }
 
@@ -1991,6 +1974,9 @@ input, select, textarea {
     max-width: 30vw; /* Setzt eine maximale Breite relativ zum Viewport */
     max-height: 30vh; /* Setzt eine maximale Höhe relativ zum Viewport */
 }
+
+
+
 
 
 
