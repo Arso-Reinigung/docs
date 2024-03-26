@@ -1364,6 +1364,7 @@ input, select, textarea {
 			border-top-width: 1px;
 			border-bottom-width: 1px;
 			max-width: 100%;
+			
 		}
 
 			#header .content .inner {
@@ -1376,7 +1377,7 @@ input, select, textarea {
 				-ms-transition-delay: 0.25s;
 				transition-delay: 0.25s;
 				padding: 3rem 2rem;
-				max-height: 40rem;
+				max-height: 50rem;
 				overflow: hidden;
 			}
 
@@ -1479,6 +1480,10 @@ input, select, textarea {
 
 		@media screen and (max-width: 980px) {
 
+			#header {
+				margin-top: -30%;
+			}
+
 			#header .content p br {
 				display: none;
 			}
@@ -1487,8 +1492,8 @@ input, select, textarea {
 
 		@media screen and (max-width: 736px) {
 
-			#header > * {
-				margin-top: 2rem;
+			#header {
+				margin-top: -35%;
 			}
 
 				#header > *:before {
@@ -1516,6 +1521,7 @@ input, select, textarea {
 
 			#header {
 				padding: 1.5rem 0;
+				margin-top: -50%;
 			}
 
 				#header .content .inner {
@@ -1715,15 +1721,13 @@ input, select, textarea {
 		}
 
 
-.logo-container {
-    position: relative;
-}
+
 
 
 
 
 .hint-star {
-  position: absolute;
+  position: relative;
   top: 11%;  /* Verändern Sie diese Werte nach Bedarf */
   left: 83%; /* Verändern Sie diese Werte nach Bedarf */
   width: 40px;  /* Oder die gewünschte Größe */
@@ -1882,7 +1886,7 @@ input, select, textarea {
 	height: 8%; 
 	background: rgba(0, 0, 0, 0.5); 
 	border-radius: 50%;
-	position: absolute;
+	position: relative;
 	bottom: -4%; 
 	  left: 48%;
 	  transform-origin: 0% 50%;
@@ -1896,19 +1900,17 @@ input, select, textarea {
 
 
   .logo-container {
-    position: absolute;
-    width: 30vw;
-    height: 30vw;
+    position: relative;
+    width: 25vw;
+    height: 25vw;
     border-radius: 50%;
-    top: 30vh;
+    top: 5vh;
+	
 }
 
 .logo {
     width: 100%;
     height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
     border-radius: 50%;
 }
 
@@ -1947,7 +1949,7 @@ input, select, textarea {
 
 #arso-logo {
     /* Positioniert das Logo relativ zum Viewport */
-    top: 38vh; /* 5% vom unteren Rand des Viewports */
+    top: 6vh; /* 5% vom unteren Rand des Viewports */
     right: 0vw; /* 5% vom rechten Rand des Viewports */
 }
 
@@ -1955,27 +1957,100 @@ input, select, textarea {
 
 .new-logo2 {
     position: relative;
-
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	top: 30vh;
+	width: 100%;
 }
-#garantie-logo {
-    /* Positioniert das Logo oben rechts, mit einem Abstand zum Rand, der relativ zur Schriftgröße des Nutzers ist */
-    bottom: 38vh; /* basierend auf der Schriftgröße des Wurzelelements */
-    right: 40vw; /* ebenfalls basierend auf der Schriftgröße des Wurzelelements */
-	
 
-	
+
+
+
+/* Anpassen der Größe der Bilder direkt */
+#arso-logo img {
+    width: auto; /* passt die Breite automatisch an, behält das Seitenverhältnis bei */
+    height: auto; /* passt die Höhe automatisch an, behält das Seitenverhältnis bei */
+    max-width: 35vw; /* Setzt eine maximale Breite relativ zum Viewport */
+    max-height: 35vh; /* Setzt eine maximale Höhe relativ zum Viewport */
 }
 
 
 /* Anpassen der Größe der Bilder direkt */
-#arso-logo img, #garantie-logo img {
+#garantie-logo img {
     width: auto; /* passt die Breite automatisch an, behält das Seitenverhältnis bei */
     height: auto; /* passt die Höhe automatisch an, behält das Seitenverhältnis bei */
-    max-width: 30vw; /* Setzt eine maximale Breite relativ zum Viewport */
-    max-height: 30vh; /* Setzt eine maximale Höhe relativ zum Viewport */
+    max-width: 23vw; /* Setzt eine maximale Breite relativ zum Viewport */
+    max-height: 23vh; /* Setzt eine maximale Höhe relativ zum Viewport */
 }
 
 
+
+
+
+@media screen and (max-width: 980px) {
+
+	#garantie-logo {
+		/* Positioniert das Logo oben rechts, mit einem Abstand zum Rand, der relativ zur Schriftgröße des Nutzers ist */
+		top: 18vh; /* basierend auf der Schriftgröße des Wurzelelements */
+		
+	}
+
+	
+
+	.logo-container {
+		position: relative;
+		width: 25vw;
+		height: 25vw;
+		border-radius: 50%;
+		top: 8vh;
+		
+	}
+
+}
+
+@media screen and (max-width: 736px) {
+
+	#garantie-logo {
+		/* Positioniert das Logo oben rechts, mit einem Abstand zum Rand, der relativ zur Schriftgröße des Nutzers ist */
+		top: 22vh; /* basierend auf der Schriftgröße des Wurzelelements */
+		
+	}
+
+
+	
+
+	.logo-container {
+		position: relative;
+		width: 25vw;
+		height: 25vw;
+		border-radius: 50%;
+		top: 10vh;
+		
+	}
+
+}
+
+@media screen and (max-width: 480px) {
+
+	#garantie-logo2 {
+		/* Positioniert das Logo oben rechts, mit einem Abstand zum Rand, der relativ zur Schriftgröße des Nutzers ist */
+		top: 22vh; /* basierend auf der Schriftgröße des Wurzelelements */
+		
+	}
+
+
+
+	.logo-container {
+		position: relative;
+		width: 25vw;
+		height: 25vw;
+		border-radius: 50%;
+		top: 10vh;
+		
+	}
+
+		}
 
 
 
@@ -2250,3 +2325,5 @@ input, select, textarea {
 }
 
 /* Zusätzliches Styling nach Bedarf */
+
+
