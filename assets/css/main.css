@@ -2009,7 +2009,35 @@ input, select, textarea {
 
 }
 
+
+
+
+
 @media screen and (max-width: 736px) {
+
+	#garantie-logo {
+		/* Positioniert das Logo oben rechts, mit einem Abstand zum Rand, der relativ zur Schriftgröße des Nutzers ist */
+		top: 18vh; /* basierend auf der Schriftgröße des Wurzelelements */
+		
+	}
+
+
+	
+
+	.logo-container {
+		position: relative;
+		width: 25vw;
+		height: 25vw;
+		border-radius: 50%;
+		top: 7vh;
+		
+	}
+
+}
+
+
+
+@media screen and (max-width: 480px) {
 
 	#garantie-logo {
 		/* Positioniert das Logo oben rechts, mit einem Abstand zum Rand, der relativ zur Schriftgröße des Nutzers ist */
@@ -2025,18 +2053,132 @@ input, select, textarea {
 		width: 25vw;
 		height: 25vw;
 		border-radius: 50%;
-		top: 10vh;
+		top: 7vh !important;
 		
 	}
 
 }
+
+
+
+/* logos grössenanpassung */
+
+
+@media screen and (max-width: 980px) {
+    .new-logo2 .garantie-logo img {
+        max-width: 20vw;
+        max-height: 20vh;
+    }
+
+    #arso-logo img {
+        max-width: 28vw;
+        max-height: 28vh;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .new-logo2 .garantie-logo img {
+        max-width: 17vw;
+        max-height: 17vh;
+    }
+
+    #arso-logo img {
+        max-width: 25vw;
+        max-height: 25vh;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .new-logo2 .garantie-logo img {
+        max-width: 14vw;
+        max-height: 14vh;
+    }
+
+    #arso-logo img {
+        max-width: 20vw;
+        max-height: 20vh;
+    }
+}
+
+
+
+
+
+/* logo nach oben verschieben */
+
+
+
+@media screen and (max-width: 1250px) {
+    .new-logo2 {
+        top: 20vh;
+    }
+
+    #arso-logo {
+        top: 5vh;
+    }
+}
+
+
+@media screen and (max-width: 980px) {
+    .new-logo2 {
+        top: 28vh;
+    }
+
+    #arso-logo {
+        top: 5vh;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .new-logo2 {
+        top: 30vh;
+    }
+
+    #arso-logo {
+        top: 4vh;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .new-logo2 {
+        top: 26vh;
+    }
+
+    #arso-logo {
+        top: 3vh;
+    }
+}
+
+
+
+@media screen and (max-width: 545px) {
+    .new-logo2 {
+        top: 22vh;
+    }
+
+    #arso-logo {
+        top: 3vh;
+    }
+}
+
+
+
+@media screen and (max-width: 480px) {
+    .new-logo2 {
+        top: 26vh;
+    }
+
+    #arso-logo {
+        top: 2vh;
+    }
+}
+
 
 @media screen and (max-width: 480px) {
 
 	#garantie-logo2 {
 		/* Positioniert das Logo oben rechts, mit einem Abstand zum Rand, der relativ zur Schriftgröße des Nutzers ist */
 		top: 22vh; /* basierend auf der Schriftgröße des Wurzelelements */
-		
 	}
 
 
