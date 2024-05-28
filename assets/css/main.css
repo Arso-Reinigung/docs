@@ -237,8 +237,8 @@ input, select, textarea {
 		font-weight: 600;
 		line-height: 1.5;
 		margin: 0 0 1rem 0;
-		text-transform: uppercase;
-		letter-spacing: 0.2rem;
+		text-transform: none;
+		letter-spacing: 0.1rem;
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -1386,7 +1386,7 @@ input, select, textarea {
 				}
 
 			#header .content p {
-				text-transform: uppercase;
+				text-transform: none;
 				letter-spacing: 0.2rem;
 				font-size: 0.8rem;
 				line-height: 2;
@@ -2174,6 +2174,17 @@ input, select, textarea {
 }
 
 
+@media screen and (max-width: 320px) {
+    .new-logo2 {
+        top: 18vh;
+    }
+
+    #arso-logo {
+        top: 2vh;
+    }
+}
+
+
 @media screen and (max-width: 480px) {
 
 	#garantie-logo2 {
@@ -2467,5 +2478,23 @@ input, select, textarea {
 }
 
 /* Zusätzliches Styling nach Bedarf */
+
+
+
+
+
+/* Pseudo-Element für das kleine Logo */
+.small-logo::before {
+    content: "";
+    display: inline-block;
+    width: 5rem; /* Setze die gewünschte Breite für das kleine Logo */
+    height: 1em; /* Setze die Höhe auf die gleiche Höhe wie die Schriftgröße */
+    background: url('../../arso.png') no-repeat center;
+    background-size: contain; /* Stellt sicher, dass das Bild proportional skaliert wird */
+    vertical-align: middle; /* Richte das Logo mit dem Text aus */
+    margin-right: 0.5rem; /* Abstand nach rechts */
+}
+
+
 
 
